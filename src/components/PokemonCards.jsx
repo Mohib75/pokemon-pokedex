@@ -46,7 +46,7 @@ export const PokemonCards = ({ pokemonData }) => {
 				))}
 			</div>
 
-			<div className='grid-three-cols'>
+			<div className='grid-two-cols'>
 				<p className='pokemon-info'>
 					<span> Height:</span> {pokemonData.height / 10} m
 				</p>
