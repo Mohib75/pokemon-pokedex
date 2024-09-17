@@ -65,10 +65,10 @@ span {
 
 .container {
 	max-width: 152rem;
-	margin: auto;
+	margin: 6rem auto;
 }
 
-.grid-three-cols {
+.grid-two-cols {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1.6rem;
