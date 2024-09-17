@@ -59,8 +59,9 @@ export const Pokemon = () => {
 	return (
 		<>
 			<section className='container'>
-				<header>
-					<h1> Let's Catch Pokémon</h1>
+				<header className='flex gap-8 items-end justify-center'>
+					<img className='object-cover w-[10%] animate-bounce' src='/pikachu.png' alt='pikachu' />
+					<h1>Gotta catch'em all!</h1>
 				</header>
 				<div className='pokemon-search'>
 					<input type='text' placeholder='search Pokemon' value={search} onChange={(e) => setSearch(e.target.value)} />
