@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const PokemonCards = ({ pokemonData }) => {
 	const typeColors = {
 		fire: "bg-[#FF5859]",
@@ -21,25 +23,25 @@ export const PokemonCards = ({ pokemonData }) => {
 		flying: "bg-[#007680]",
 	}
 	return (
-		<li className='pokemon-card rounded-3xl border-white border-[1px] border-solid'>
+		<Link to={`/pokemon/${pokemonData?.name}`} className='pokemon-card rounded-3xl border-white border-[1px] border-solid'>
 			<figure>
 				<img
 					src={
 						// pokemonData.sprites.other.dream_world.front_default === null
 						// 	? pokemonData.sprites.other.home.front_default
 						// 	: pokemonData.sprites.other.dream_world.front_default
-						pokemonData.sprites.other.home.front_default
+						pokemonData?.sprites?.other?.home?.front_default
 					}
-					alt={pokemonData.name}
+					alt={pokemonData?.name}
 					className='pokemon-image'
 				/>
 			</figure>
-			<h1 className='pokemon-name'>{pokemonData.name}</h1>
+			<h1 className='pokemon-name'>{pokemonData?.name}</h1>
 			<div className='pokemon-info pokemon-highlight gap-4'>
 				{/* <p className={pokemonData.types.map((curType) => typeColors[curType.type.name] || "bg-green-500").join(" ")}>
 					{pokemonData.types.map((curType) => curType.type.name).join(", ")}
 				</p> */}
-				{pokemonData.types.map((curType, index) => (
+				{pokemonData?.types.map((curType, index) => (
 					<p key={index} className={typeColors[curType.type.name] || "bg-green-500"}>
 						{curType.type.name}
 					</p>
@@ -48,13 +50,13 @@ export const PokemonCards = ({ pokemonData }) => {
 
 			<div className='grid-two-cols'>
 				<p className='pokemon-info'>
-					<span> Height:</span> {pokemonData.height / 10} m
+					<span> Height:</span> {pokemonData?.height / 10} m
 				</p>
 				<p className='pokemon-info'>
-					<span> Weight:</span> {pokemonData.weight / 10} kg
+					<span> Weight:</span> {pokemonData?.weight / 10} kg
 				</p>
 				<p className='pokemon-info'>
-					<span> speed:</span> {pokemonData.stats[5].base_stat}
+					<span> speed:</span> {pokemonData?.stats[5].base_stat}
 				</p>
 			</div>
 
@@ -77,6 +79,6 @@ export const PokemonCards = ({ pokemonData }) => {
 					<span> Abilities: </span>
 				</div>
 			</div> */}
-		</li>
+		</Link>
 	)
 }
